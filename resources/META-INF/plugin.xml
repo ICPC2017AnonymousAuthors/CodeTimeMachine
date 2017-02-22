@@ -1,0 +1,39 @@
+<idea-plugin version="1.0">
+  <id>com.anonymous.codetimemachine</id>
+  <name>Code Time Machine</name>
+  <version>1.2</version>
+  <vendor email="Anonymous Authors" url="Anonymous Authors">Anonymous Authors</vendor>
+
+  <description><![CDATA[
+      The <em>Code Time Machine</em> is a lightweight IDE plugin which uses visualization techniques to depict the history of any chosen ﬁle augmented with information mined from the underlying versioning system. Inspired by Apple’s Time Machine, this tool allows both developers and the system itself to seamlessly move through time.
+    ]]></description>
+
+  <change-notes><![CDATA[
+      First release.
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="141.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="showCodeTimeMachine" class="com.anonymous.codetimemachine.CodeTimeMachineAction"
+            text="Open CodeTimeMachine" description="Open CodeTimeMachine">
+      <add-to-group group-id="ToolsMenu" anchor="first"/>
+      <add-to-group group-id="ProjectViewPopupMenu" relative-to-action="CutCopyPasteGroup" anchor="before"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="shift meta L"/>
+    </action>
+  </actions>
+
+</idea-plugin>
